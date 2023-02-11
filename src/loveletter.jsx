@@ -3,10 +3,9 @@ import { useState } from 'react';
 //http://www.gingerbeardman.com/loveletter/
 //copied from https://trinket.io/html/c208236a41
 export const LoveLetter = () => {
-
-  const [randomLetter, setRandomLetter] = useState("")  // [value, update_value_function]
   var letter = "";
   function lettercreate(){
+    var tempLetter = "";
     var salutations1 = ["BELOVED", "DARLING", "DEAR", "DEAREST", "FANCIFUL", "HONEY"],
 
     salutations2 = ["CHICKPEA", "DEAR", "DUCK", "JEWEL", "LOVE", "MOPPET", "SWEETHEART"],
@@ -39,34 +38,34 @@ export const LoveLetter = () => {
     ];
 
     function choose(lst) {
-    var i = Math.floor(Math.random() * lst.length);
-    return lst[i];
+        var i = Math.floor(Math.random() * lst.length);
+        return lst[i];
     }
 
-    letter += choose(salutations1) + " " + choose(salutations2) + ",";
+    tempLetter += choose(salutations1) + " " + choose(salutations2) + ",";
 
     for (var i = 0; i < 5; i = i + 1) {
         if (Math.random() < 0.5) {
-        letter += "MY " +
+        tempLetter += "MY " +
             choose(adjectives) + " " +
             choose(nouns) + " " + choose(adverbs) + " " +
             choose(verbs) + " YOUR " +
             choose(adjectives) + " " + choose(nouns) + ". ";
         } else {
-        letter += "YOU ARE MY " +
+        tempLetter += "YOU ARE MY " +
             choose(adjectives) + " " + choose(nouns) + ". ";
         }
     }
     
-    letter += "YOURS " + choose(adverbs) + ",M.U.C";
-
-    setRandomLetter(letter);
+    tempLetter += "YOURS " + choose(adverbs) + ",M.U.C";
+    return tempLetter;
   }
+  letter = lettercreate();
 
 return(
     <div>
-        <button onClick={()=>lettercreate()}> Generate Letter </button>
-        <div>{randomLetter}</div>
+        {/* <button onClick={()=>lettercreate()}> Generate Letter </button> */}
+        <div>{letter}</div>
     </div>
     
 )
