@@ -22,14 +22,19 @@ function Home() {
   }
   return (
     <div className="Home" onMouseMove={e => blobMove(e)}>
+      
+      <h1>Love Letter Generator</h1>
+      <button onClick = {() => popup()}>
+        Open love letter
+      </button>
       <div id='blob' style={{left: x, top: y, position:'absolute'}}>
           <img src={'blobfish.png'} style={{ width: 200}}></img>
       </div>
-      <h1>Love Letter Generator</h1>
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        {/* <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </button> */}
         <p>
           i like dogs
         </p>
@@ -38,9 +43,7 @@ function Home() {
         UWU
       </p>
       {/* window.location.hostname  */}
-      <button onClick = {() => popup()}>
-        Open love letter
-      </button>
+      
 
     </div>
   )
