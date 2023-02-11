@@ -27,7 +27,7 @@ function Home() {
       <button onClick = {() => popup()}>
         Open love letter
       </button>
-      <div id='blob' style={{left: x, top: y, position:'absolute'}}>
+      <div id='blob' style={{left: x+2, top: y+2, position:'absolute'}}>
           <img src={'blobfish.png'} style={{ width: 200}}></img>
       </div>
 
