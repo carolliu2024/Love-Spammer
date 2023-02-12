@@ -42,7 +42,7 @@ export const LoveLetter = () => {
         return lst[i];
     }
 
-    tempLetter += choose(salutations1) + " " + choose(salutations2) + ",";
+    tempLetter += choose(salutations1) + " " + choose(salutations2) + ",\n";
 
     for (var i = 0; i < 5; i = i + 1) {
         if (Math.random() < 0.5) {
@@ -57,7 +57,7 @@ export const LoveLetter = () => {
         }
     }
     
-    tempLetter += "YOURS " + choose(adverbs) + ",M.U.C";
+    tempLetter += "YOURS " + choose(adverbs) + ", sussy amog";
     return tempLetter;
   }
   letter = lettercreate();
