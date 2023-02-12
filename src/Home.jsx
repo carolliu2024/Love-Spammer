@@ -5,26 +5,30 @@ import { LoveLetter } from './loveletter'
 import { Blob } from './Blob'
 
 function Home() {
-  const [count, setCount] = useState(0)
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  // const [count, setCount] = useState(0)
+  const [x, setX] = useState(5); // blob pos
+  const [y, setY] = useState(5); // blob pos
   function popup(){
     var left = Math.random() * screen.width;
     var top = Math.random() * screen.height;
-    var features = `width=500, height=500, left=${left}, top = ${top}`;
+    var features = `width=500, height=300, left=${left}, top = ${top}`;
     window.open("/message", "", features);
     // newWindow.moveBy(500,0);
   }
   function blobMove(e){
-    setX(e.clientX);
-    setY(e.clientY);
+    var targetX = e.clientX;
+    var targetY = e.clientY;
+    setX(x + 0.1*(targetX - x));
+    setY(y + 0.1*(targetY - y));
     // console.log("x = ",x, "y=",y);
   }
   return (
-    <div className="Home" onMouseMove={e => blobMove(e)}>
+    <div className="App" onMouseMove={e => blobMove(e)}>
       
       <h1>Love Letter Generator</h1>
-      <button onClick = {() => popup()}>
+      <button onClick = {() => {for(let i=0; i<5; i++){
+        popup();
+      }}}>
         Open love letter
       </button>
       <div id='blob' style={{left: x+2, top: y+2, position:'absolute'}}>
