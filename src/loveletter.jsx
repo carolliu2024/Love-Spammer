@@ -57,7 +57,7 @@ export const LoveLetter = () => {
         }
     }
     
-    tempLetter += "YOURS " + choose(adverbs) + ", sussy amog";
+    tempLetter += "YOURS " + choose(adverbs) + ", sussy sweetheart";
     return tempLetter;
   }
   letter = lettercreate();

@@ -41,7 +41,7 @@ function Home() {
   return (
     <div className="App" onMouseMove={e => blobMove(e)}>
       
-      <h1>Love Letter Generator</h1>
+      <h1>u habe secret admire!!!!1</h1>
       <button onClick = {() => {for(let i=0; i<5; i++){
         setTimeout(() => {
           popup();
